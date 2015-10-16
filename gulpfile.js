@@ -106,6 +106,7 @@ gulp.task('watch', function(){
 	gulp.watch(paths.scss.location, ['compass']);
 	gulp.watch(paths.js.location, ['scripts']);
 	gulp.watch(paths.js.plugins, ['plugins']);
+	gulp.watch(paths.browserSync.watchPaths).on('change', browserSync.reload);
 });
 
 /* --------- default --------- */
