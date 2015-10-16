@@ -106,11 +106,6 @@ gulp.task('watch', function(){
 	gulp.watch(paths.scss.location, ['compass']);
 	gulp.watch(paths.js.location, ['scripts']);
 	gulp.watch(paths.js.plugins, ['plugins']);
-	
-	// pp - is for Pixel Perfect
-	if (!gulp.env.pp || gulp.env.pp == 'off') {
-		gulp.watch(paths.browserSync.watchPaths).on('change', browserSync.reload);
-	}
 });
 
 /* --------- default --------- */
