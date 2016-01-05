@@ -5,3 +5,90 @@ block title
 
 block content
 	article.content-wrapper
+		.container
+			.main-title
+				| Мобильные телефоны
+			.main-content
+
+				include ../_common/_sidebar
+
+				.content
+					.sort
+						.sort__left
+							.sort__select--wrap
+								.sort__title
+									| Сортировать по
+								.sort__select
+									select.sort__select-elem
+										-var options = ["по цене", "по популярности"]
+										each option in options
+											option(value="")= option
+						.sort__right
+							.sort__title
+								| Вид каталогга
+							.sort__view
+								ul.sort__view-list
+									-var items = ['rows', 'grids', 'lines']
+									each item in items
+										li(class="sort__view-item sort__view_" + item data-view= item)
+											a(href="#").sort__view-link
+												span.sort__view-icon
+
+					.products
+						ul.products__list#products-list
+							- for (var i = 0; i < 9; i++)
+								li.products__item
+									.products__item-inner
+										.products__left
+											.products__slideshow
+												.products__slideshow-block
+													a(href="#").products__slideshow-display
+														img(src="http://lorempixel.com/200/200/technics/6" alt="").products__slideshow-img
+													ul.products__slideshow-thumbs
+														- for (var j = 0; j < 3; j++)
+															li.products__slideshow-item
+																a(href="#").products__slideshow-link
+																	img(src="http://lorempixel.com/45/45/technics/" + j alt="").products__slideshow-thumb-img
+												.products__article
+													.products__article-word Артикул
+													.products__article-num 189238
+											.products__desc
+												.products__desc-title Samsung FT-I9301I GALAXY S 3
+												ul.products__desc-options
+													- var options = {'Тип SIM-карты': "Micro-SIM", "Колличество SIM-карт" : "1", "ОС" : "Android", "Связь 3G" : "Есть", "4G (LTE)" : "Нет", "GPS-модуль" : "Есть"}
+													- var index = 0;
+													- for (item in options)
+														li(class="products__option-item" + (!(index++ % 2) ? ' products__option-item_colored' : '') )
+															.products__option-key= item
+															.products__option-value= options[item]
+												div(class="products__rating" data-rating="4")
+										.products__right
+											.products__info
+												.products__price 11 290
+													i.rub
+											.products__info-bottom
+												a(href="#").products__buy-btn В корзину
+												.products__availability
+													| В наличии
+					.pagination
+						ul.pagination__list
+							li.pagination__item.pagination__item_prev
+								a(href="#").pagination__link
+									.pagination__mark
+							- for (var i = 1; i < 4; i++)
+								li.pagination__item
+									a(href="#").pagination__link
+										.pagination__mark= i
+							li.pagination__item.pagination__item_next
+								a(href="#").pagination__link
+									.pagination__mark
+			.attention
+				.main-title
+					| Важная информация
+			.attention__text
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
